@@ -15,6 +15,10 @@ It is my first foray into the Laravel framework.
 
 _Frances Hitchcock 11/09/23_
 
+## Hosting
+
+The app is hosted by kind permission of Alex Scotton at [https://frances-chirp.alexscotton.com/](https://frances-chirp.alexscotton.com/)
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
