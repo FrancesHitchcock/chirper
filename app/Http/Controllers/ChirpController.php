@@ -17,13 +17,8 @@ class ChirpController extends Controller
     /**
      * Display a listing of the resource.
      */
-    // public function index()
-    // public function index(): Response 
     public function index(): View
     {
-        //
-        // return response('Hello, World!');
-        // return view('chirps.index');
         return view('chirps.index', [
             'chirps' => Chirp::with('user')->latest()->get(),
         ]);
@@ -40,10 +35,8 @@ class ChirpController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    // public function store(Request $request)
     public function store(Request $request): RedirectResponse
     {
-        //
         $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
@@ -64,10 +57,8 @@ class ChirpController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    // public function edit(Chirp $chirp)
     public function edit(Chirp $chirp): View
     {
-        //
         $this->authorize('update', $chirp);
 
         return view('chirps.edit', [
@@ -78,10 +69,8 @@ class ChirpController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    // public function update(Request $request, Chirp $chirp)
     public function update(Request $request, Chirp $chirp): RedirectResponse
     {
-        //
         $this->authorize('update', $chirp);
 
         $validated = $request->validate([
@@ -96,10 +85,8 @@ class ChirpController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    // public function destroy(Chirp $chirp)
     public function destroy(Chirp $chirp): RedirectResponse
     {
-        //
         $this->authorize('delete', $chirp);
 
         $chirp->delete();

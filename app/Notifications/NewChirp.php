@@ -16,7 +16,6 @@ class NewChirp extends Notification
     /**
      * Create a new notification instance.
      */
-    // public function __construct()
     public function __construct(public Chirp $chirp)
     {
         //
@@ -38,8 +37,6 @@ class NewChirp extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    // ->line('The introduction to the notification.')
-                    // ->action('Notification Action', url('/'))
                     ->subject("New Chirp from {$this->chirp->user->name}")
                     ->greeting("New Chirp from {$this->chirp->user->name}")
                     ->line(Str::limit($this->chirp->message, 50))
