@@ -55,6 +55,7 @@ class ChirpPolicy
     public function restore(User $user, Chirp $chirp): bool
     {
         //
+        return $this->update($user, $chirp);
     }
 
     /**
